@@ -1,15 +1,3 @@
-if game.PlaceId == 2753915549 then
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "BMB HUB BF beta", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
-
---- Value
-
-_G.AutoFarm
-
-
-
---- Functions
-function AutoFarmbeo()
 _G.AutoFarm = true
 local GetQuests = function(N,NB)
     local args = {
@@ -93,23 +81,3 @@ spawn(function()
         end)
     end
 end)
-    
---- Tabs
-local MainTab = Window:MakeTab({
-	Name = "MainTab",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
---- toggle
-MainTab:AddToggle({
-	Name = "AutoFarm",
-	Default = false,
-	Callback = function(Value)
-		_G.AutoFarm == Value
-        AutoFarm(Value)
-	end    
-})
-
-end
-OrionLib:Init()
